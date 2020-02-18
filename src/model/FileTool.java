@@ -42,6 +42,11 @@ public class FileTool {
 		return result;
 	}
 	
+	/**
+	 * This method update the file by adding a line in the end of its content. 
+	 * @param fileName: The path of the file.
+	 * @param stuff: The String to be add into the file.
+	 **/
 	public static void writeUpdate(String fileName, String stuff) {
 		FileWriter fw = null;
 		File file = new File(fileName);
@@ -59,7 +64,11 @@ public class FileTool {
 			}
 		}
 	}
-	
+	/**
+	 * This method overwrite everything inside the file.
+	 * @param fileName: The path of the file.
+	 * @param stuff: The String to be add into the file.
+	 **/	
 	public static void writeOver(String fileName, String stuff) {
 		FileWriter fw = null;
 		File file = new File(fileName);
