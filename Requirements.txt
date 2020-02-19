@@ -1,0 +1,3 @@
+ExampleCourse ExampleDirector 100.5 1Lecturer/2Tutors/2hoursLab false false
+SecondCourse secondDirector 200 2Lecturer/3Tutors false false
+Adv.Programming Mathew 1000.0 Nothing true false
