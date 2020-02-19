@@ -9,6 +9,21 @@ import java.util.Scanner;
 
 /** This class is a tool for reading and writing file. **/
 public class FileTool {
+	
+	//This method read the Requirement.txt file
+	//and return an array of Requirements.
+	public static ArrayList<Requirement> readAllReq() {
+		ArrayList<String> requirements = readFile("Requirements.txt");
+		ArrayList<Requirement> reqList = new ArrayList<Requirement>();
+		for(String s : requirements) {
+			String[] str = s.split("\\s+"); //split the line by spaces. "\\s+" is a regex means spaces.
+			Requirement req = new Requirement(str[0],str[1],Double.parseDouble(str[2]),
+					str[3],Boolean.parseBoolean(str[4]),Boolean.parseBoolean(str[5]));
+			reqList.add(req);
+		}
+		return reqList;
+	}
+	
 		
 	/**
 	 * This method reads the content of a file.
@@ -86,6 +101,4 @@ public class FileTool {
 			}
 		}
 	}
-	
-
 }
