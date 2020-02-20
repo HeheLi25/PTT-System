@@ -9,7 +9,15 @@ public class Requirement {
 	private boolean arranged;
 	
 	//Constructor
-	public Requirement(String courseName,String classDir,double budget,String requirement,boolean approved,boolean arranged) {
+	public Requirement(String courseName,String classDir,double budget,String requirement) {
+		this.courseName = courseName;
+		this.classDir = classDir;
+		this.budget = budget;
+		this.requirement = requirement;
+		this.approved = false;
+		this.arranged = false;
+	}
+	public Requirement(String courseName,String classDir,double budget,String requirement,boolean approved, boolean arranged) {
 		this.courseName = courseName;
 		this.classDir = classDir;
 		this.budget = budget;
@@ -18,8 +26,9 @@ public class Requirement {
 		this.arranged = arranged;
 	}
 	
+	
 	public String toString() {
-		return courseName+" "+classDir+" "+budget+" "+requirement+" "+approved+" "+arranged+"\n";
+		return courseName+"***"+classDir+"***"+budget+"***"+requirement+"***"+approved+"***"+arranged;
 	}
 	
 	//Getters and Setters

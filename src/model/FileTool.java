@@ -10,19 +10,61 @@ import java.util.Scanner;
 /** This class is a tool for reading and writing file. **/
 public class FileTool {
 	
-	//This method read the Requirement.txt file
+	//This method reads the Requirement.txt file
 	//and return an array of Requirements.
 	public static ArrayList<Requirement> readAllReq() {
 		ArrayList<String> requirements = readFile("Requirements.txt");
 		ArrayList<Requirement> reqList = new ArrayList<Requirement>();
 		for(String s : requirements) {
-			String[] str = s.split("\\s+"); //split the line by spaces. "\\s+" is a regex means spaces.
+			String[] str = s.split("\\*\\*\\*"); //split the line by "***".
 			Requirement req = new Requirement(str[0],str[1],Double.parseDouble(str[2]),
 					str[3],Boolean.parseBoolean(str[4]),Boolean.parseBoolean(str[5]));
 			reqList.add(req);
 		}
 		return reqList;
 	}
+	
+	//This method takes one Requirement object 
+	//and write it into the file Requirements.txt
+	public static void writeOneReq(Requirement r) {
+		writeUpdate("Requirements.txt",r.toString()+"\n");
+	}
+	
+	//This method cleans up the Requirements.txt
+	public void cleanReq() {
+		try {
+			FileWriter fileWriter = new FileWriter("Requirements.txt");
+			fileWriter.write("");
+			fileWriter.flush();
+			fileWriter.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//This method takes an arrayList of Requirement objects
+	//and overwrite the Requirements.txt file with them.
+	public static void overWriteReq(ArrayList<Requirement> al) {
+		FileWriter fw = null;
+		File file = new File("Requirements.txt");
+		 try {
+			fw = new FileWriter(file,true);
+			for(Requirement r: al) {
+				fw.write(r.toString()+"\n");
+			}
+			fw.flush();
+		} catch (IOException e) {
+			System.err.println("!!!Unable to overwrite Requirements.txt");
+			e.printStackTrace();
+		}finally {
+			try {
+				fw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	
 		
 	/**
