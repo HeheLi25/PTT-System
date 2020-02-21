@@ -1,5 +1,9 @@
 package model;
 
+import java.awt.Component;
+
+import javax.swing.JCheckBox;
+
 public class Requirement {
 	private String courseName;
 	private String classDir;
@@ -7,6 +11,7 @@ public class Requirement {
 	private String requirement;
 	private boolean approved;
 	private boolean arranged;
+	public JCheckBox checkBox =new JCheckBox();
 	
 	//Constructor
 	public Requirement(String courseName,String classDir,double budget,String requirement) {
@@ -16,6 +21,7 @@ public class Requirement {
 		this.requirement = requirement;
 		this.approved = false;
 		this.arranged = false;
+		
 	}
 	public Requirement(String courseName,String classDir,double budget,String requirement,boolean approved, boolean arranged) {
 		this.courseName = courseName;
@@ -30,7 +36,9 @@ public class Requirement {
 	public String toString() {
 		return courseName+"***"+classDir+"***"+budget+"***"+requirement+"***"+approved+"***"+arranged;
 	}
-	
+	public String printInfo() {
+		return "    "+courseName+"    "+classDir+"   "+budget+"   "+requirement+"   "+approved+"   "+arranged;
+	}
 	//Getters and Setters
 	
 	public String getCourseName() {

@@ -31,7 +31,7 @@ public class FileTool {
 	}
 	
 	//This method cleans up the Requirements.txt
-	public void cleanReq() {
+	public static void cleanReq() {
 		try {
 			FileWriter fileWriter = new FileWriter("Requirements.txt");
 			fileWriter.write("");
@@ -48,7 +48,7 @@ public class FileTool {
 		FileWriter fw = null;
 		File file = new File("Requirements.txt");
 		 try {
-			fw = new FileWriter(file,true);
+			fw = new FileWriter(file,false);
 			for(Requirement r: al) {
 				fw.write(r.toString()+"\n");
 			}
