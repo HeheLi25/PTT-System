@@ -48,7 +48,7 @@ public class FileTool {
 		FileWriter fw = null;
 		File file = new File("Requirements.txt");
 		 try {
-			fw = new FileWriter(file,true);
+			fw = new FileWriter(file,false);
 			for(Requirement r: al) {
 				fw.write(r.toString()+"\n");
 			}
