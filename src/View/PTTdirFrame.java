@@ -54,7 +54,7 @@ public class PTTdirFrame {
 	private JFrame frame;
 	private PTTdirController controllerObject;
 	private PTTdirModel modelObject;
-
+	private JButton btnSave;
 	/**
 	 * Launch the application.
 	 */
@@ -80,6 +80,12 @@ public class PTTdirFrame {
 	public PTTdirFrame(PTTdirModel model,PTTdirController controller) {
         controllerObject = controller;
         modelObject = model;
+        
+        setFrame(new JFrame());
+        getFrame().setTitle("PTTdir GUI");
+		getFrame().setBounds(100, 100, 800, 500);
+		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
 		initialize();
 	}
 
@@ -88,12 +94,10 @@ public class PTTdirFrame {
 	 */
 	private void initialize() {
 		
-		setFrame(new JFrame());
-		getFrame().setBounds(100, 100, 800, 500);
-		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
 		
-		JButton btnSave = new JButton("Update and return");
+		
+		JButton btnSave = new JButton("Save");
+		btnSave.addActionListener(controllerObject);
 		btnSave.setBounds(550, 424, 200, 29);
 		frame.getContentPane().add(btnSave);
 	
@@ -133,7 +137,7 @@ public class PTTdirFrame {
 			JLabel infoLabel = new JLabel();
 			
 			modelObject.getReqList().get(i).setCheckBox(new JCheckBox());
-			modelObject.getReqList().get(i).getCheckBox().addActionListener(controllerObject);
+			modelObject.getReqList().get(i).getCheckBox().addItemListener(controllerObject);
 			modelObject.getReqList().get(i).getCheckPanel().add(modelObject.getReqList().get(i).getCheckBox());
 			
 			infoLabel.setText(modelObject.getReqList().get(i).printInfo());
@@ -142,7 +146,9 @@ public class PTTdirFrame {
 		}
 
 		}
-
+	public void reinitialize(){
+		initialize();
+	}
 	
 	
 	public JFrame getFrame() {
@@ -151,6 +157,14 @@ public class PTTdirFrame {
 
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
+	}
+
+	public JButton getBtnSave() {
+		return btnSave;
+	}
+
+	public void setBtnSave(JButton btnSave) {
+		this.btnSave = btnSave;
 	}
 
 }

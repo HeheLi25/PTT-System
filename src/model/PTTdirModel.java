@@ -8,7 +8,10 @@ public class PTTdirModel {
 	public ArrayList<Requirement> getReqList() {
 		return reqList;
 	}
-
+	public void writeIn() {
+		FileTool.overWriteReq(reqList);
+		
+	}
 	public void setReqList(ArrayList<Requirement> reqList) {
 		this.reqList = reqList;
 	}
