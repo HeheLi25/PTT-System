@@ -111,28 +111,34 @@ public class PTTdirFrame {
 		
 		JPanel panel = new JPanel();
 		scrollPane.setViewportView(panel);
-		panel.setLayout(new GridLayout(modelObject.getReqList().size(), 1, 0, 0));
+		panel.setLayout(new GridLayout(modelObject.getReqList().size()+1, 1, 0, 0));
 		
-		JLabel lblNewLabel_2 = new JLabel("Approved   courseName   classDir   budget   requirement   approved   arranged");
-		lblNewLabel_2.setBounds(48, 65, 649, 16);
-		frame.getContentPane().add(lblNewLabel_2);
+		//JLabel lblNewLabel_2 = new JLabel("Approved   courseName   classDir   budget   requirement   approved   arranged");
+		//lblNewLabel_2.setBounds(48, 65, 649, 16);
+		//frame.getContentPane().add(lblNewLabel_2);
 		
-	
+		JLabel firstLabel = new JLabel("Approved   courseName   classDir   budget   requirement   approved   arranged");
+		panel.add(firstLabel);
+		
 		
 	
 	
 		for(int i =0;i<modelObject.getReqList().size();i++) {
+		
 			
-			JPanel panel_1 = new JPanel();
-			panel.add(panel_1);
-			panel_1.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
-			JLabel lblNewLabel_1 = new JLabel();
+			modelObject.getReqList().get(i).setCheckPanel(new JPanel());
+			panel.add(modelObject.getReqList().get(i).getCheckPanel());
+			modelObject.getReqList().get(i).getCheckPanel().setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
 			
-			panel_1.add(modelObject.getReqList().get(i).checkBox);
+			JLabel infoLabel = new JLabel();
 			
-			lblNewLabel_1.setText(modelObject.getReqList().get(i).printInfo());
-			lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
-			panel_1.add(lblNewLabel_1);
+			modelObject.getReqList().get(i).setCheckBox(new JCheckBox());
+			modelObject.getReqList().get(i).getCheckBox().addActionListener(controllerObject);
+			modelObject.getReqList().get(i).getCheckPanel().add(modelObject.getReqList().get(i).getCheckBox());
+			
+			infoLabel.setText(modelObject.getReqList().get(i).printInfo());
+			infoLabel.setHorizontalAlignment(SwingConstants.LEFT);
+			modelObject.getReqList().get(i).getCheckPanel().add(infoLabel);
 		}
 
 		}
