@@ -6,3 +6,4 @@ Course4***Name4***400.0***This is Requirement 4***false***false
 Course5***Name5***500.0***This is Requirement 5***false***false
 Course6***Name6***600.0***This is Requirement 6***false***false
 Course7***Name7***700.0***This is Requirement 7***false***false
+Course8***Name7***700.0***This is Requirement 7***false***false

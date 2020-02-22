@@ -120,8 +120,9 @@ public class PTTdirFrame {
 		//JLabel lblNewLabel_2 = new JLabel("Approved   courseName   classDir   budget   requirement   approved   arranged");
 		//lblNewLabel_2.setBounds(48, 65, 649, 16);
 		//frame.getContentPane().add(lblNewLabel_2);
+		String a =String.format("%30s%20s%18s%25s","CourseName","ClassDir","Budget","Requirement");
 		
-		JLabel firstLabel = new JLabel("Approved   courseName   classDir   budget   requirement   approved   arranged");
+		JLabel firstLabel = new JLabel(a);
 		panel.add(firstLabel);
 		
 		
