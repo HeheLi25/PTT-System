@@ -29,6 +29,7 @@ public class AdminFrame extends JFrame {
 	public AdminController controller;
 	
 	public JButton back;
+	public JButton pervious;
 	
 
 	/**
@@ -79,6 +80,8 @@ public class AdminFrame extends JFrame {
 		seePreButton.setFont(new Font("Corbel", Font.BOLD | Font.ITALIC, 25));
 		seePreButton.setForeground(new Color(51, 153, 102));
 		seePreButton.setBounds(64, 355, 302, 71);
+		this.pervious = seePreButton;
+		pervious.addActionListener(controller);
 		contentPanel.add(seePreButton);
 
 		JButton backButton = new JButton("Back");
