@@ -23,13 +23,14 @@ public class PTTdirController implements ActionListener,ItemListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		//if(e.getSource() == viewObject.getBtnSave()) {
-			
-	//		}
-	//	}else if (e.getSource() == viewObject.buttonNew) {
-			
-	//	}else {
-	//		System.exit(0);
+		if(e.getSource() == viewObject.getBtnSave()) {
+			modelObject.writeIn();
+			viewObject.reinitialize();
+		}else if(e.getSource() == viewObject.getBtnHome()){
+			System.exit(0);
+		}else {
+			System.exit(0);
+			}
 			
 
 	}
@@ -40,10 +41,10 @@ public class PTTdirController implements ActionListener,ItemListener{
 		for(int i =0;i<modelObject.getReqList().size();i++) {
 			if(modelObject.getReqList().get(i).getCheckBox().isSelected()) {
 				modelObject.getReqList().get(i).setApproved(true);
-				modelObject.writeIn();
+				
 			}else {
 				modelObject.getReqList().get(i).setApproved(false);
-				modelObject.writeIn();
+			
 			}
 			
 		}

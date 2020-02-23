@@ -38,7 +38,7 @@ public class Requirement {
 		return courseName+"***"+classDir+"***"+budget+"***"+requirement+"***"+approved+"***"+arranged;
 	}
 	public String printInfo() {
-		String Info = String.format("%20s%20.5s%20s%20s",courseName,classDir,budget,arranged);
+		String Info = String.format("%20s%20.5s%20s%20s",courseName,classDir,budget,approved);
 		String Info2 = Info + requirement;
 		return Info2;
 	}

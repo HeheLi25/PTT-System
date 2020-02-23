@@ -55,6 +55,7 @@ public class PTTdirFrame {
 	private PTTdirController controllerObject;
 	private PTTdirModel modelObject;
 	private JButton btnSave;
+	private JButton btnHome;
 	/**
 	 * Launch the application.
 	 */
@@ -66,6 +67,7 @@ public class PTTdirFrame {
 					PTTdirModel model = new PTTdirModel();
 					PTTdirController controller = new PTTdirController(model);
 					PTTdirFrame window = new PTTdirFrame(model, controller);
+					controller.setView(window);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -87,6 +89,7 @@ public class PTTdirFrame {
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		initialize();
+		
 	}
 
 	/**
@@ -96,9 +99,9 @@ public class PTTdirFrame {
 		
 		
 		
-		JButton btnSave = new JButton("Save");
+		btnSave = new JButton("Save");
 		btnSave.addActionListener(controllerObject);
-		btnSave.setBounds(550, 424, 200, 29);
+		btnSave.setBounds(550, 424, 150, 29);
 		frame.getContentPane().add(btnSave);
 	
 		
@@ -125,6 +128,11 @@ public class PTTdirFrame {
 		JLabel firstLabel = new JLabel(a);
 		panel.add(firstLabel);
 		
+		btnHome = new JButton("Home");
+		btnHome.setBounds(362, 424, 150, 29);
+		btnHome.addActionListener(controllerObject);
+		frame.getContentPane().add(btnHome);
+		
 		
 	
 	
@@ -148,6 +156,11 @@ public class PTTdirFrame {
 
 		}
 	public void reinitialize(){
+		PTTdirModel model = new PTTdirModel();
+		PTTdirController controller = new PTTdirController(model);
+		PTTdirFrame window = new PTTdirFrame(model, controller);
+		controller.setView(window);
+		window.frame.setVisible(true);
 		initialize();
 	}
 	
@@ -167,5 +180,11 @@ public class PTTdirFrame {
 	public void setBtnSave(JButton btnSave) {
 		this.btnSave = btnSave;
 	}
+	public JButton getBtnHome() {
+		return btnHome;
+	}
 
+	public void setBtnhome(JButton btnHome) {
+		this.btnHome = btnHome;
+	}
 }
