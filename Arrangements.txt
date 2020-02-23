@@ -1,12 +1,23 @@
-Course0***Name0***10.0***Req!***false***false
+Course0***Name0***10.0***Req1!***false***false
 Chentao***Yirong***
 Play***Eat lunch***LOL***
 
-Course0***Name0***10.0***Req!***false***false
+Course1***Name0***10.0***Req2!***false***false
 Chentao***Tuanzai***
 Play***Have Fun***
 
-Course0***Name0***10.0***Req!***false***false
+Course2***Name0***10.0***Req3!***false***false
 Tuanzai***Yirong***
 Play***Eat lunch***Basketball***
 
+Course3***Name0***10.0***Req3!***false***false
+Tuanzai***Yirong***
+Play***Eat lunch***Basketball***
+
+Course4***Name0***10.0***Req3!***false***false
+Tuanzai***Yirong***
+Play***Eat lunch***Basketball***
+
+Course5***Name0***10.0***Req3!***false***false
+Tuanzai***Yirong***
+Play***Eat lunch***Basketball***
