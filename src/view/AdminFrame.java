@@ -16,23 +16,7 @@ import javax.swing.JTable;
 
 public class AdminFrame extends JFrame {
 
-	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AdminFrame frame = new AdminFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private JPanel contentPanel;
 
 	/**
 	 * Create the frame.
@@ -41,45 +25,45 @@ public class AdminFrame extends JFrame {
 		setTitle("Administrator");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPanel = new JPanel();
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPanel);
+		contentPanel.setLayout(null);
 
 		JLabel requireTitle = new JLabel("Requirement List");
 		requireTitle.setBackground(new Color(224, 255, 255));
-		requireTitle.setForeground(new Color(30, 144, 255));
-		requireTitle.setFont(new Font("Showcard Gothic", Font.PLAIN, 22));
+		requireTitle.setForeground(new Color(102, 153, 153));
+		requireTitle.setFont(new Font("Corbel Light", Font.BOLD, 22));
 		requireTitle.setBounds(57, 22, 267, 39);
-		contentPane.add(requireTitle);
+		contentPanel.add(requireTitle);
 
 		JLabel arrangeLabel = new JLabel("Click to arrange");
-		arrangeLabel.setForeground(new Color(50, 205, 50));
+		arrangeLabel.setForeground(new Color(0, 204, 153));
 		arrangeLabel.setBackground(new Color(255, 0, 0));
-		arrangeLabel.setFont(new Font("Showcard Gothic", Font.PLAIN, 22));
+		arrangeLabel.setFont(new Font("Corbel Light", Font.BOLD, 22));
 		arrangeLabel.setBounds(479, 25, 242, 36);
-		contentPane.add(arrangeLabel);
+		contentPanel.add(arrangeLabel);
 
-		JButton seePreButton = new JButton("See Previous Page");
+		JButton seePreButton = new JButton("Previous Arrangements");
 		seePreButton.setBackground(new Color(245, 245, 245));
-		seePreButton.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 25));
-		seePreButton.setForeground(new Color(255, 140, 0));
+		seePreButton.setFont(new Font("Corbel Light", Font.BOLD, 25));
+		seePreButton.setForeground(new Color(153, 102, 153));
 		seePreButton.setBounds(40, 355, 302, 71);
-		contentPane.add(seePreButton);
+		contentPanel.add(seePreButton);
 
 		JButton backButton = new JButton("Back");
 		backButton.setBackground(new Color(245, 245, 245));
 		backButton.setForeground(new Color(0, 0, 0));
-		backButton.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 25));
+		backButton.setFont(new Font("Corbel Light", Font.BOLD, 25));
 		backButton.setBounds(574, 362, 159, 57);
-		contentPane.add(backButton);
+		contentPanel.add(backButton);
 
 		JPanel panel = new JPanel();
 		panel.setBounds(48, 61, 643, 281);
 		panel.setLayout(new GridLayout(0, 2, 0, 0));
 		JScrollPane sp = new JScrollPane(panel);
 		sp.setBounds(67, 61, 624, 279);
-		contentPane.add(sp);
+		contentPanel.add(sp);
 
 		// requireLabel 1
 		JLabel requireLabel1 = new JLabel("Requirement 1 will appear there");
