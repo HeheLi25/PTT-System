@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import javax.swing.JFrame;
 
@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import javax.swing.border.MatteBorder;
 import javax.swing.table.DefaultTableModel;
 
-import Controller.PTTdirController;
+import controller.PTTdirController;
 import model.FileTool;
 import model.PTTdirModel;
 import model.Requirement;
