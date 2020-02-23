@@ -3,6 +3,8 @@ package controller;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JCheckBox;
@@ -12,20 +14,32 @@ import javax.swing.JScrollPane;
 
 import model.FileTool;
 import model.Requirement;
+import view.AdminFrame;
 import view.ArrangeFrame;
 
-public class ArrangeController {
+public class ArrangeController implements ActionListener{
 	public ArrangeFrame view;
 	public JLabel requireLabel;
 	Requirement req;
 	public JPanel staffPanel, trainingPanel;
 	public JScrollPane staffsp, trainingsp;
 	
-	
 	public ArrangeController(ArrangeFrame view) {
 		this.view = view;
 		this.req = view.req;
 	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == view.back) {
+			view.dispose();
+			AdminFrame af = new AdminFrame();
+			af.setVisible(true);
+		}
+		
+	}
+	
+	
 	public void setRequirementTitle() {
 		requireLabel = new JLabel(req.getRequirement());
 		requireLabel.setFont(new Font("Showcard Gothic", Font.PLAIN, 27));
@@ -63,6 +77,7 @@ public class ArrangeController {
 		}
 		view.contentPanel.add(trainingsp);
 	}
+
 	
 	
 	

@@ -28,6 +28,8 @@ public class AdminFrame extends JFrame {
 	JPanel panel;
 	public AdminController controller;
 	
+	public JButton back;
+	
 
 	/**
 	 * Launch the application.
@@ -60,42 +62,44 @@ public class AdminFrame extends JFrame {
 
 		JLabel requireTitle = new JLabel("Requirement");
 		requireTitle.setBackground(new Color(224, 255, 255));
-		requireTitle.setForeground(new Color(30, 144, 255));
-		requireTitle.setFont(new Font("Showcard Gothic", Font.PLAIN, 22));
+		requireTitle.setForeground(new Color(51, 51, 153));
+		requireTitle.setFont(new Font("Corbel Light", Font.BOLD, 22));
 		requireTitle.setBounds(360, 22, 159, 39);
 		contentPanel.add(requireTitle);
 
 		JLabel arrangeLabel = new JLabel("to arrange");
-		arrangeLabel.setForeground(new Color(50, 205, 50));
+		arrangeLabel.setForeground(new Color(102, 51, 153));
 		arrangeLabel.setBackground(new Color(255, 0, 0));
-		arrangeLabel.setFont(new Font("Showcard Gothic", Font.PLAIN, 22));
+		arrangeLabel.setFont(new Font("Corbel Light", Font.BOLD, 22));
 		arrangeLabel.setBounds(544, 23, 142, 36);
 		contentPanel.add(arrangeLabel);
 
-		JButton seePreButton = new JButton("See Previous Page");
+		JButton seePreButton = new JButton("Previous Arrangements");
 		seePreButton.setBackground(new Color(245, 245, 245));
-		seePreButton.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 25));
-		seePreButton.setForeground(new Color(255, 140, 0));
-		seePreButton.setBounds(40, 355, 302, 71);
+		seePreButton.setFont(new Font("Corbel", Font.BOLD | Font.ITALIC, 25));
+		seePreButton.setForeground(new Color(51, 153, 102));
+		seePreButton.setBounds(64, 355, 302, 71);
 		contentPanel.add(seePreButton);
 
 		JButton backButton = new JButton("Back");
 		backButton.setBackground(new Color(245, 245, 245));
 		backButton.setForeground(new Color(0, 0, 0));
-		backButton.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 25));
+		backButton.setFont(new Font("Corbel", Font.BOLD | Font.ITALIC, 25));
 		backButton.setBounds(574, 362, 159, 57);
+		this.back = backButton;
+		back.addActionListener(controller);
 		contentPanel.add(backButton);
 		
 		JLabel courseNameTitle = new JLabel("CourseName");
-		courseNameTitle.setForeground(new Color(30, 144, 255));
-		courseNameTitle.setFont(new Font("Showcard Gothic", Font.PLAIN, 22));
+		courseNameTitle.setForeground(new Color(51, 153, 153));
+		courseNameTitle.setFont(new Font("Corbel Light", Font.BOLD, 22));
 		courseNameTitle.setBackground(new Color(224, 255, 255));
 		courseNameTitle.setBounds(29, 22, 159, 39);
 		contentPanel.add(courseNameTitle);
 		
 		JLabel classDir = new JLabel("ClassDir");
-		classDir.setForeground(new Color(50, 205, 50));
-		classDir.setFont(new Font("Showcard Gothic", Font.PLAIN, 22));
+		classDir.setForeground(new Color(51, 102, 153));
+		classDir.setFont(new Font("Corbel Light", Font.BOLD, 22));
 		classDir.setBackground(Color.RED);
 		classDir.setBounds(198, 23, 123, 36);
 		contentPanel.add(classDir);

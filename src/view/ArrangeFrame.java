@@ -28,6 +28,7 @@ public class ArrangeFrame extends JFrame {
 	public JPanel contentPanel;
 	public Requirement req;
 	public ArrangeController controller;
+	public JButton back;
 
 	/**
 	 * Launch the application.
@@ -77,15 +78,12 @@ public class ArrangeFrame extends JFrame {
 		contentPanel.add(courseTitleLabel);
 		
 		JButton ArrangeBackButton = new JButton("Back");
-		ArrangeBackButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
+		ArrangeBackButton.addActionListener(controller);
 		ArrangeBackButton.setBackground(new Color(128, 128, 128));
 		ArrangeBackButton.setForeground(new Color(0, 0, 0));
 		ArrangeBackButton.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 25));
 		ArrangeBackButton.setBounds(10, 11, 114, 52);
+		this.back = ArrangeBackButton;
 		contentPanel.add(ArrangeBackButton);
 		
 		JButton arrangeSubmitButton = new JButton("Submit");

@@ -15,14 +15,25 @@ import model.Requirement;
 import view.AdminFrame;
 import view.ArrangeFrame;
 import view.ArrangedRFrame;
+import view.HomeFrame;
 
-public class AdminController {
+public class AdminController implements ActionListener{
 	public AdminFrame view;
 	public JPanel panel;
 	public JScrollPane sp;
 
 	public AdminController(AdminFrame view) {
 		this.view = view;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == view.back) {
+			view.dispose();
+			HomeFrame hf = new HomeFrame();
+			hf.setVisible(true);
+		}
+		
 	}
 
 	public void createRequirement() {
@@ -44,6 +55,7 @@ public class AdminController {
 					public void actionPerformed(ActionEvent e) {
 						view.dispose();
 						ArrangeFrame arf = new ArrangeFrame(req);
+						arf.setVisible(true);
 					}
 				});
 				panel.add(courseName);
@@ -67,4 +79,6 @@ public class AdminController {
 		view.contentPanel.add(sp);
 
 	}
+
+
 }
