@@ -47,4 +47,16 @@ public class Arrangement {
 		return result;
 	}
 
+	public Requirement getRequirement() {
+		return requirement;
+	}
+
+	public ArrayList<String> getStaffs() {
+		return staffs;
+	}
+
+	public ArrayList<String> getTraining() {
+		return training;
+	}
+	
 }
