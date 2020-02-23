@@ -13,6 +13,7 @@ import javax.swing.JScrollPane;
 import model.FileTool;
 import model.Requirement;
 import view.AdminFrame;
+import view.ArrangeFrame;
 import view.ArrangedRFrame;
 
 public class AdminController {
@@ -42,7 +43,7 @@ public class AdminController {
 				arrangeButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						view.dispose();
-						ArrangedRFrame arf = new ArrangedRFrame(req);
+						ArrangeFrame arf = new ArrangeFrame(req);
 					}
 				});
 				panel.add(courseName);
