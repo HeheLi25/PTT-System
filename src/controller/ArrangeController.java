@@ -45,6 +45,11 @@ public class ArrangeController implements ActionListener{
 			af.setVisible(true);
 		}
 		if(e.getSource() == view.submit) {
+			if(staffs.size()<1 || training.size()<1) {
+				JOptionPane.showMessageDialog(null, "You must choose at least one staff and one training course.", "Alert", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
 			Arrangement a = new Arrangement(req);
 			a.setStaffs(staffs);
 			a.setTraining(training);
