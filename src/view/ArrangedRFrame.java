@@ -20,6 +20,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class ArrangedRFrame extends JFrame {
 
@@ -60,8 +61,8 @@ public class ArrangedRFrame extends JFrame {
 		
 		JButton backButton = new JButton("BACK");
 		backButton.setBackground(new Color(192, 192, 192));
-		backButton.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 26));
-		backButton.setBounds(574, 340, 147, 59);
+		backButton.setFont(new Font("Corbel", Font.BOLD | Font.ITALIC, 26));
+		backButton.setBounds(579, 342, 142, 57);
 		this.back = backButton;
 		back.addActionListener(controller);
 		contentPanel.add(backButton);
