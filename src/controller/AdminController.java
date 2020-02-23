@@ -52,6 +52,9 @@ public class AdminController implements ActionListener{
 		ArrayList<Requirement> r = FileTool.readAllReq();
 
 		for (Requirement req : r) {
+			if (!req.isApproved()) {
+				continue;
+			}
 			if (!req.isArranged()) {
 				JLabel courseName = new JLabel(req.getCourseName());
 				JLabel classDir = new JLabel(req.getClassDir());
