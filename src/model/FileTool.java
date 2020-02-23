@@ -5,13 +5,18 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
+
 
 /** This class is a tool for reading and writing file. **/
 public class FileTool {
 	
-	//This method reads the Requirement.txt file
-	//and return an array of Requirements.
+	/**This method reads the Requirement.txt file
+	 * and return an array of Requirements.
+	 * @return A list of all Requirements.
+	 */
 	public static ArrayList<Requirement> readAllReq() {
 		ArrayList<String> requirements = readFile("Requirements.txt");
 		ArrayList<Requirement> reqList = new ArrayList<Requirement>();
@@ -24,13 +29,17 @@ public class FileTool {
 		return reqList;
 	}
 	
-	//This method takes one Requirement object 
-	//and write it into the file Requirements.txt
+	/**This method takes one Requirement object 
+	 * and write it into the file Requirements.txt
+	 * @param r: one requirement object to write into file.
+	 */
 	public static void writeOneReq(Requirement r) {
 		writeUpdate("Requirements.txt",r.toString()+"\n");
 	}
 	
-	//This method cleans up the Requirements.txt
+	/**
+	 * This method cleans up the Requirements.txt
+	 */
 	public void cleanReq() {
 		try {
 			FileWriter fileWriter = new FileWriter("Requirements.txt");
@@ -42,8 +51,10 @@ public class FileTool {
 		}
 	}
 	
-	//This method takes an arrayList of Requirement objects
-	//and overwrite the Requirements.txt file with them.
+	/**This method takes an arrayList of Requirement objects
+	 * and overwrite the Requirements.txt file with them.
+	 * @param al: A list of requirements to overwrite the file.
+	 */
 	public static void overWriteReq(ArrayList<Requirement> al) {
 		FileWriter fw = null;
 		File file = new File("Requirements.txt");
@@ -65,6 +76,54 @@ public class FileTool {
 		}
 	}
 	
+	/**This method takes one Arrangement object 
+	 * and write it into the file Requirements.txt
+	 * @param r: one requirement object to write into file.
+	 */
+	public static void writeOneArr(Arrangement a) {
+		writeUpdate("Arrangements.txt",a.toString()+"\n\n");
+	}
+	
+	/**
+	 * This method reads all arrangements from Arrangements.txt
+	 * then creates Arrangement objects and put them in an ArrayList
+	 * @return an ArrayList contains all Arrangement objects. 
+	 */
+	public static ArrayList<Arrangement> readAllArr(){
+		List<String> raw = readFile("Arrangements.txt");
+		ArrayList<Arrangement> result = new ArrayList<Arrangement>();
+		Iterator it = raw.iterator();
+		while(it.hasNext()) {
+			//Create a requirement according to the data
+			String reqLine = (String) it.next();
+			String[] str = reqLine.split("\\*\\*\\*"); //split the line by "***".
+			Requirement req = new Requirement(str[0],str[1],Double.parseDouble(str[2]),
+					str[3],Boolean.parseBoolean(str[4]),Boolean.parseBoolean(str[5])); 
+			//Create an arrangement object
+			Arrangement a = new Arrangement(req); 
+			//Read the staffs and add them to the arrangement object
+			String staffsLine = (String) it.next();
+			String[] stf = staffsLine.split("\\*\\*\\*"); 
+			for(String s: stf) {
+				if(!s.equals(""))a.addStaff(s);
+			}
+			//Read the training courses and add them to the arrangement object
+			String trainingLine = (String) it.next();
+			String[] t = trainingLine.split("\\*\\*\\*");
+			for(String s: t) {
+				if(!s.equals(""))a.addTraining(s);
+			}
+			//Add the arrangement obejct to the result ArrayList
+			result.add(a);
+			try{
+				it.next();	//flush the empty line.
+			}catch(Exception e) {
+				//System.out.println("End reading");
+			}
+			
+		}
+		return result;
+	}
 	
 		
 	/**

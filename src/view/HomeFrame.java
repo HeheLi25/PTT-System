@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controller.HomeController;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
@@ -15,64 +18,52 @@ import java.awt.event.ActionEvent;
 
 public class HomeFrame extends JFrame {
 
-	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					HomeFrame frame = new HomeFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	public JPanel contentPanel;
+	public JButton adminButton, classDirButton, PTTDirButton;
+	private HomeController controller;
 
 	/**
 	 * Create the frame.
 	 */
 	public HomeFrame() {
+		this.controller = new HomeController(this);
 		setTitle("HomePage");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPanel = new JPanel();
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPanel);
+		contentPanel.setLayout(null);
 		
-		JLabel homeTitleLabel = new JLabel("Choose your position");
-		homeTitleLabel.setForeground(new Color(102, 153, 204));
-		homeTitleLabel.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 37));
+		JLabel homeTitleLabel = new JLabel("---- Choose your position ----");
+		homeTitleLabel.setForeground(new Color(51, 102, 153));
+		homeTitleLabel.setFont(new Font("Corbel Light", Font.BOLD, 37));
 		homeTitleLabel.setBounds(128, 21, 500, 77);
-		contentPane.add(homeTitleLabel);
+		contentPanel.add(homeTitleLabel);
 		
 		JButton CDButton = new JButton("Class Director");
-		CDButton.setForeground(new Color(128, 0, 128));
-		CDButton.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 27));
+		CDButton.setForeground(new Color(102, 102, 153));
+		CDButton.setFont(new Font("Constantia", Font.PLAIN, 27));
 		CDButton.setBounds(231, 109, 291, 58);
-		contentPane.add(CDButton);
+		CDButton.addActionListener(controller);
+		this.classDirButton = CDButton;
+		contentPanel.add(CDButton);
 		
 		JButton PTTDButton = new JButton("PTT Director");
-		PTTDButton.setForeground(new Color(128, 0, 128));
-		PTTDButton.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 27));
+		PTTDButton.setForeground(new Color(102, 102, 153));
+		PTTDButton.setFont(new Font("Constantia", Font.PLAIN, 27));
 		PTTDButton.setBounds(231, 199, 291, 58);
-		contentPane.add(PTTDButton);
+		PTTDButton.addActionListener(controller);
+		this.PTTDirButton = PTTDButton;
+		contentPanel.add(PTTDButton);
 		
-		JButton AdminaButton = new JButton("Administrator");
-		AdminaButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		AdminaButton.setForeground(new Color(128, 0, 128));
-		AdminaButton.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 27));
-		AdminaButton.setBounds(231, 293, 291, 58);
-		contentPane.add(AdminaButton);
+		JButton AdminButton = new JButton("Administrator");
+		AdminButton.setForeground(new Color(102, 102, 153));
+		AdminButton.setFont(new Font("Constantia", Font.PLAIN, 27));
+		AdminButton.setBounds(231, 293, 291, 58);
+		AdminButton.addActionListener(controller);
+		this.adminButton = AdminButton;
+		contentPanel.add(AdminButton);
 	}
 
 }
