@@ -33,6 +33,12 @@ public class AdminController implements ActionListener{
 			HomeFrame hf = new HomeFrame();
 			hf.setVisible(true);
 		}
+		//see previous arrangement page
+		if(e.getSource() == view.pervious) {
+			view.dispose();
+			ArrangedRFrame arf = new ArrangedRFrame();
+			arf.setVisible(true);
+		}
 		
 	}
 
