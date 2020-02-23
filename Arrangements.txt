@@ -1,0 +1,12 @@
+Course0***Name0***10.0***Req!***false***false
+Chentao***Yirong***
+Play***Eat lunch***LOL***
+
+Course0***Name0***10.0***Req!***false***false
+Chentao***Tuanzai***
+Play***Have Fun***
+
+Course0***Name0***10.0***Req!***false***false
+Tuanzai***Yirong***
+Play***Eat lunch***Basketball***
+
