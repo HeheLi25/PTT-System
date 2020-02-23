@@ -7,6 +7,13 @@ import java.util.ArrayList;
  */
 
 public class Arrangement {
+	
+	public void setStaffs(ArrayList<String> staffs) {
+		this.staffs = staffs;
+	}
+	public void setTraining(ArrayList<String> training) {
+		this.training = training;
+	}
 	private Requirement requirement;
 	private ArrayList<String> staffs;
 	private ArrayList<String> training;
