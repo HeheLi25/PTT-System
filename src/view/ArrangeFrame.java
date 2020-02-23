@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import model.Requirement;
+
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
@@ -17,6 +20,7 @@ import java.awt.event.ActionEvent;
 public class ArrangeFrame extends JFrame {
 
 	private JPanel contentPane;
+	Requirement r;
 
 	/**
 	 * Launch the application.
@@ -25,7 +29,7 @@ public class ArrangeFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ArrangeFrame frame = new ArrangeFrame();
+					ArrangeFrame frame = new ArrangeFrame(new Requirement("","",0.0," "));
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +41,8 @@ public class ArrangeFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ArrangeFrame() {
+	public ArrangeFrame(Requirement r) {
+		this.r = r;
 		setTitle("Arrangement Page");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
