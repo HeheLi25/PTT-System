@@ -19,9 +19,7 @@ import java.awt.event.ActionEvent;
 public class HomeFrame extends JFrame {
 
 	public JPanel contentPanel;
-	public JButton adminButton;
-	public JButton classDirButton;
-	public JButton PTTDirButton;
+	public JButton adminButton, classDirButton, PTTDirButton;
 	private HomeController controller;
 
 	/**

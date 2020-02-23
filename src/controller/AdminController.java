@@ -54,7 +54,7 @@ public class AdminController implements ActionListener{
 				arrangeButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						view.dispose();
-						ArrangeFrame arf = new ArrangeFrame(req);
+						ArrangeFrame arf = new ArrangeFrame(r,r.indexOf(req));
 						arf.setVisible(true);
 					}
 				});
