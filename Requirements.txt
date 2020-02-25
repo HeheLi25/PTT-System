@@ -1,5 +1,5 @@
 Course0***Name0***0.0***This is Requirement 0***true***true
-Course1***Name1***100.0***This is Requirement 1***true***false
+Course1***Name1***100.0***This is Requirement 1***true***true
 Course2***Name2***200.0***This is Requirement 2***true***true
 Course3***Name3***300.0***This is Requirement 3***false***true
 Course4***Name4***400.0***This is Requirement 4***true***false

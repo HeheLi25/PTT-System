@@ -18,8 +18,8 @@ import java.awt.event.ActionEvent;
 
 public class HomeFrame extends JFrame {
 
-	public JPanel contentPanel;
-	public JButton adminButton, classDirButton, PTTDirButton;
+	private JPanel contentPanel;
+	private JButton adminButton, classDirButton, PTTDirButton;
 	private HomeController controller;
 
 	/**
@@ -68,6 +68,21 @@ public class HomeFrame extends JFrame {
 	}
 	public void close() {
 		this.dispose();
+	}
+	public JPanel getContentPanel() {
+		return contentPanel;
+	}
+	public JButton getAdminButton() {
+		return adminButton;
+	}
+	public JButton getClassDirButton() {
+		return classDirButton;
+	}
+	public JButton getPTTDirButton() {
+		return PTTDirButton;
+	}
+	public HomeController getController() {
+		return controller;
 	}
 
 }

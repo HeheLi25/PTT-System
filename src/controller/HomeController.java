@@ -14,7 +14,7 @@ public class HomeController implements ActionListener {
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == view.adminButton) {
+		if(e.getSource() == view.getAdminButton()) {
 			LoginFrame lf = new LoginFrame(view,"administrator");
 			lf.setVisible(true);
 		}	

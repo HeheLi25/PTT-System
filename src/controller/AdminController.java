@@ -28,13 +28,13 @@ public class AdminController implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == view.back) {
+		if(e.getSource() == view.getBack()) {
 			view.dispose();
 			HomeFrame hf = new HomeFrame();
 			hf.setVisible(true);
 		}
 		//see previous arrangement page
-		if(e.getSource() == view.pervious) {
+		if(e.getSource() == view.getPervious()) {
 			view.dispose();
 			ArrangedRFrame arf = new ArrangedRFrame();
 			arf.setVisible(true);
@@ -85,7 +85,7 @@ public class AdminController implements ActionListener{
 			
 		}
 
-		view.contentPanel.add(sp);
+		view.getContentPanel().add(sp);
 
 	}
 
