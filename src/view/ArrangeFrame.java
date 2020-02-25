@@ -43,7 +43,8 @@ public class ArrangeFrame extends JFrame {
 		controller = new ArrangeController(this);
 		setTitle("Arrangement Page");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 500);
+		setSize(800,500);
+		setLocationRelativeTo(null);
 		contentPanel = new JPanel();
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPanel);

@@ -52,7 +52,8 @@ public class ArrangedRFrame extends JFrame {
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 500);
+		setSize(800,500);
+		setLocationRelativeTo(null);
 		this.setTitle("Arranged Requirements");
 		contentPanel = new JPanel();
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

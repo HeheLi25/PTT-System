@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import view.HomeFrame;
-import view.AdminFrame;
+import view.LoginFrame;
 
 public class HomeController implements ActionListener {
 	private HomeFrame view;
@@ -15,9 +15,8 @@ public class HomeController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == view.adminButton) {
-			view.dispose();
-			AdminFrame af = new AdminFrame();
-			af.setVisible(true);
+			LoginFrame lf = new LoginFrame(view,"administrator");
+			lf.setVisible(true);
 		}	
 	}
 
