@@ -32,21 +32,6 @@ public class AdminFrame extends JFrame {
 	public JButton pervious;
 	
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AdminFrame frame = new AdminFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -55,7 +40,8 @@ public class AdminFrame extends JFrame {
 		controller = new AdminController(this);
 		setTitle("Administrator");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 500);
+		setSize(800,500);
+		setLocationRelativeTo(null);
 		contentPanel = new JPanel();
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPanel);

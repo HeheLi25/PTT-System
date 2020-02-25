@@ -1,0 +1,3 @@
+adminTest***123456***administrator
+classDirTest***password***class director
+PTTDirTest***654321***PTT director

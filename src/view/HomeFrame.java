@@ -29,7 +29,8 @@ public class HomeFrame extends JFrame {
 		this.controller = new HomeController(this);
 		setTitle("HomePage");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 500);
+		setSize(800,500);
+		setLocationRelativeTo(null);
 		contentPanel = new JPanel();
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPanel);
@@ -64,6 +65,9 @@ public class HomeFrame extends JFrame {
 		AdminButton.addActionListener(controller);
 		this.adminButton = AdminButton;
 		contentPanel.add(AdminButton);
+	}
+	public void close() {
+		this.dispose();
 	}
 
 }
