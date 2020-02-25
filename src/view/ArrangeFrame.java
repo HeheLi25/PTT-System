@@ -26,11 +26,11 @@ import java.awt.Component;
 
 public class ArrangeFrame extends JFrame {
 
-	public JPanel contentPanel;
-	public Requirement req;
-	public ArrayList<Requirement> allReq;
-	public ArrangeController controller;
-	public JButton back, submit;
+	private JPanel contentPanel;
+	private Requirement req;
+	private ArrayList<Requirement> allReq;
+	private ArrangeController controller;
+	private JButton back, submit;
 
 
 
@@ -88,4 +88,26 @@ public class ArrangeFrame extends JFrame {
 		controller.setStaff();
 		controller.setTraining();
 	}
+
+
+
+	public JPanel getContentPanel() {
+		return contentPanel;
+	}
+	public Requirement getReq() {
+		return req;
+	}
+	public ArrayList<Requirement> getAllReq() {
+		return allReq;
+	}
+	public ArrangeController getController() {
+		return controller;
+	}
+	public JButton getBack() {
+		return back;
+	}
+	public JButton getSubmit() {
+		return submit;
+	}
+	
 }

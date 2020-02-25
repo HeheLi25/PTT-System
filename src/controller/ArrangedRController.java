@@ -55,13 +55,13 @@ public class ArrangedRController implements ActionListener{
 			panel.add(oneArrangement);
 		}
 		
-		view.contentPanel.add(sp);
+		view.getContentPanel().add(sp);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// back to Administrator page
-		if(e.getSource() == view.back) {
+		if(e.getSource() == view.getBack()) {
 			view.dispose();
 			AdminFrame af = new AdminFrame();
 			af.setVisible(true);

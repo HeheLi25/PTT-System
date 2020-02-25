@@ -24,9 +24,9 @@ import javax.swing.SwingConstants;
 
 public class ArrangedRFrame extends JFrame {
 
-	public JPanel contentPanel;
-	public ArrangedRController controller;
-	public JButton back;
+	private JPanel contentPanel;
+	private ArrangedRController controller;
+	private JButton back;
 
 	/**
 	 * Launch the application.
@@ -69,6 +69,18 @@ public class ArrangedRFrame extends JFrame {
 		contentPanel.add(backButton);
 		
 		controller.setArrangement();
+	}
+
+	public JPanel getContentPanel() {
+		return contentPanel;
+	}
+
+	public ArrangedRController getController() {
+		return controller;
+	}
+
+	public JButton getBack() {
+		return back;
 	}
 
 }

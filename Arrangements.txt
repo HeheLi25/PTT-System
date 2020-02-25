@@ -26,3 +26,7 @@ Course9***Name8***800.0***This is Requirement 8***true***false
 Simon***Bob***
 Cyber security fundemental***Human computer interaction***
 
+Course1***Name1***100.0***This is Requirement 1***true***false
+Tuanzai***Chentao***
+Sleep***
+

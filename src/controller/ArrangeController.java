@@ -31,20 +31,20 @@ public class ArrangeController implements ActionListener{
 	
 	public ArrangeController(ArrangeFrame view) {
 		this.view = view;
-		this.req = view.req;
-		this.allReq = view.allReq;
+		this.req = view.getReq();
+		this.allReq = view.getAllReq();
 		staffs = new ArrayList<String>();
 		training = new ArrayList<String>();
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == view.back) {
+		if(e.getSource() == view.getBack()) {
 			view.dispose();
 			AdminFrame af = new AdminFrame();
 			af.setVisible(true);
 		}
-		if(e.getSource() == view.submit) {
+		if(e.getSource() == view.getSubmit()) {
 			if(staffs.size()<1 || training.size()<1) {
 				JOptionPane.showMessageDialog(null, "You must choose at least one staff and one training course.", "Alert", JOptionPane.ERROR_MESSAGE);
 				return;
@@ -70,7 +70,7 @@ public class ArrangeController implements ActionListener{
 		requireLabel.setFont(new Font("Corbel", Font.PLAIN, 22));
 		requireLabel.setForeground(new Color(51, 153, 120));
 		requireLabel.setBounds(232, 11, 346, 52);
-		view.contentPanel.add(requireLabel);
+		view.getContentPanel().add(requireLabel);
 	}
 	public void setStaff() {
 		staffPanel = new JPanel();
@@ -96,7 +96,7 @@ public class ArrangeController implements ActionListener{
 			
 			staffPanel.add(name);
 		}
-		view.contentPanel.add(staffsp);
+		view.getContentPanel().add(staffsp);
 	}
 	public void setTraining() {
 		trainingPanel = new JPanel();
@@ -121,7 +121,7 @@ public class ArrangeController implements ActionListener{
 			});
 			trainingPanel.add(courseName);
 		}
-		view.contentPanel.add(trainingsp);
+		view.getContentPanel().add(trainingsp);
 	}
 
 	

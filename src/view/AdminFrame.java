@@ -23,13 +23,13 @@ import javax.swing.JTable;
 
 public class AdminFrame extends JFrame {
 
-	public JPanel contentPanel;
-	JScrollPane sp;
-	JPanel panel;
-	public AdminController controller;
+	private JPanel contentPanel;
+	private JScrollPane sp;
+	private JPanel panel;
+	private AdminController controller;
 	
-	public JButton back;
-	public JButton pervious;
+	private JButton back;
+	private JButton pervious;
 	
 
 
@@ -70,7 +70,7 @@ public class AdminFrame extends JFrame {
 		pervious.addActionListener(controller);
 		contentPanel.add(seePreButton);
 
-		JButton backButton = new JButton("Back");
+		JButton backButton = new JButton("Logout");
 		backButton.setBackground(new Color(245, 245, 245));
 		backButton.setForeground(new Color(0, 0, 0));
 		backButton.setFont(new Font("Corbel", Font.BOLD | Font.ITALIC, 25));
@@ -163,4 +163,26 @@ public class AdminFrame extends JFrame {
 //		panel.add(requireButton5);
 		
 	}
+
+
+
+	public JPanel getContentPanel() {
+		return contentPanel;
+	}
+	public JScrollPane getSp() {
+		return sp;
+	}
+	public JPanel getPanel() {
+		return panel;
+	}
+	public AdminController getController() {
+		return controller;
+	}
+	public JButton getBack() {
+		return back;
+	}
+	public JButton getPervious() {
+		return pervious;
+	}
+	
 }
