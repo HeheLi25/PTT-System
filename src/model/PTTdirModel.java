@@ -9,6 +9,7 @@ public class PTTdirModel {
 		return reqList;
 	}
 	public void writeIn() {
+		
 		FileTool.overWriteReq(reqList);
 		
 	}

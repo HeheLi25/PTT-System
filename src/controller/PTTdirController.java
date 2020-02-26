@@ -25,7 +25,7 @@ public class PTTdirController implements ActionListener,ItemListener{
 		// TODO Auto-generated method stub
 		if(e.getSource() == viewObject.getBtnSave()) {
 			modelObject.writeIn();
-			viewObject.reinitialize();
+			viewObject.updateView();
 		}else if(e.getSource() == viewObject.getBtnHome()){
 			System.exit(0);
 		}else {

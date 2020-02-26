@@ -164,7 +164,26 @@ public class PTTdirFrame {
 		initialize();
 	}
 	
-	
+	public void updateView() {
+	for(int i =0;i<modelObject.getReqList().size();i++) {
+		
+			
+			modelObject.getReqList().get(i).setCheckPanel(new JPanel());
+			panel.add(modelObject.getReqList().get(i).getCheckPanel());
+			modelObject.getReqList().get(i).getCheckPanel().setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
+			
+			JLabel infoLabel = new JLabel();
+			
+			modelObject.getReqList().get(i).setCheckBox(new JCheckBox());
+			modelObject.getReqList().get(i).getCheckBox().addItemListener(controllerObject);
+			modelObject.getReqList().get(i).getCheckPanel().add(modelObject.getReqList().get(i).getCheckBox());
+			
+			infoLabel.setText(modelObject.getReqList().get(i).printInfo());
+			infoLabel.setHorizontalAlignment(SwingConstants.LEFT);
+			modelObject.getReqList().get(i).getCheckPanel().add(infoLabel);
+		}
+
+	}
 	public JFrame getFrame() {
 		return frame;
 	}
