@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Scanner;
 
 
-/** This class is a tool for reading and writing file. **/
+/** 
+ * This class is a tool for reading and writing file. 
+ */
 public class FileTool {
 	
 	/**This method reads the Requirement.txt file

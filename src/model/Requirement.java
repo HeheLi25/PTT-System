@@ -41,11 +41,11 @@ public class Requirement {
 		return courseName+"***"+classDir+"***"+budget+"***"+requirement+"***"+approved+"***"+arranged;
 	}
 
-	public String printInfo() {
-		String Info = String.format("%20s%20.5s%20s%20s",courseName,classDir,budget,approved);
-		String Info2 = Info + requirement;
-		return Info2;
-	}
+//	public String printInfo() {
+//		String Info = String.format("%20s%20.5s%20s%50s",courseName,classDir,budget,requirement);
+//		String Info2 = Info + requirement;
+//		return Info2;
+//	}
 
 	//Getters and Setters
 	

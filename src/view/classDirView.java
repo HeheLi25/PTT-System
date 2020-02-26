@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import controller.*;
 import model.*;
 import javax.swing.JTextField;
+import java.awt.Color;
 
 public class classDirView extends JFrame {
 	private classDirController controllerObject;
@@ -46,8 +47,9 @@ public class classDirView extends JFrame {
 	
 	public void layoutComponents() {
 		
-		JLabel lblClass = new JLabel("Class Director GUI");
-		lblClass.setBounds(339, 28, 122, 16);
+		JLabel lblClass = new JLabel("Send a requirement");
+		lblClass.setFont(new Font("Corbel", Font.BOLD, 25));
+		lblClass.setBounds(233, 21, 264, 48);
 		getContentPane().add(lblClass);
 		
 		textField = new JTextField();
@@ -57,19 +59,28 @@ public class classDirView extends JFrame {
 		reqArray.add(textField);
 		
 		JLabel lblNewLabel = new JLabel("Course Name:");
-		lblNewLabel.setBounds(150, 102, 130, 16);
+		lblNewLabel.setForeground(new Color(51, 102, 102));
+		lblNewLabel.setFont(new Font("Corbel Light", Font.BOLD, 24));
+		lblNewLabel.setBackground(new Color(51, 102, 102));
+		lblNewLabel.setBounds(150, 90, 192, 29);
 		getContentPane().add(lblNewLabel);
 		
 		JLabel lblClassDirector = new JLabel("Class Director:");
-		lblClassDirector.setBounds(150, 155, 109, 16);
+		lblClassDirector.setForeground(new Color(51, 102, 153));
+		lblClassDirector.setFont(new Font("Corbel Light", Font.BOLD, 24));
+		lblClassDirector.setBounds(150, 140, 164, 38);
 		getContentPane().add(lblClassDirector);
 		
 		JLabel lblBudget = new JLabel("Budget:");
-		lblBudget.setBounds(149, 211, 84, 16);
+		lblBudget.setForeground(new Color(102, 102, 153));
+		lblBudget.setFont(new Font("Corbel Light", Font.BOLD, 24));
+		lblBudget.setBounds(150, 199, 141, 38);
 		getContentPane().add(lblBudget);
 		
 		JLabel lblRequirement = new JLabel("Requirement:");
-		lblRequirement.setBounds(149, 263, 84, 16);
+		lblRequirement.setForeground(new Color(153, 102, 153));
+		lblRequirement.setFont(new Font("Corbel Light", Font.BOLD, 24));
+		lblRequirement.setBounds(150, 255, 192, 38);
 		getContentPane().add(lblRequirement);
 		
 		textField_1 = new JTextField();
@@ -90,22 +101,20 @@ public class classDirView extends JFrame {
 		textField_3.setColumns(10);
 		reqArray.add(textField_3);
 		
-		btnSave = new JButton("Save");
-		btnSave.setBounds(187, 390, 117, 29);
+		btnSave = new JButton("Send");
+		btnSave.setBounds(126, 344, 117, 29);
 		btnSave.addActionListener(controllerObject);
 		getContentPane().add(btnSave);
 		
-		btnReturn = new JButton("Return");
-		btnReturn.setBounds(363, 390, 117, 29);
+		btnReturn = new JButton("Logout");
+		btnReturn.setBounds(295, 344, 117, 29);
 		btnReturn.addActionListener(controllerObject);
 		getContentPane().add(btnReturn);
 		
-		btnView = new JButton("View");
-		btnView.setBounds(547, 390, 117, 29);
+		btnView = new JButton("View requirements");
+		btnView.setBounds(464, 344, 247, 29);
 		btnView.addActionListener(controllerObject);
 		getContentPane().add(btnView);
-		
-		System.out.println(reqArray);
 	
 	}
 	

@@ -1,14 +1,18 @@
-Course0***Name0***0.0***This is Requirement 0***true***true
-Course1***Name1***100.0***This is Requirement 1***true***true
-Course2***Name2***200.0***This is Requirement 2***true***true
-Course3***Name3***300.0***This is Requirement 3***true***true
-Course4***Name4***400.0***This is Requirement 4***true***false
-Course5***Name5***500.0***This is Requirement 5***true***true
-Course6***Name6***600.0***This is Requirement 6***true***true
-Course7***Name7***700.0***This is Requirement 7***true***false
-Course9***Name8***800.0***This is Requirement 8***true***true
-Course10***Name9***800.0***This is Requirement 9***true***false
-Course11***Name11***800.0***This is Requirement 10***true***true
-Course12***Name11***800.0***This is Requirement 11***true***true
-Course13***Name12***800.0***This is Requirement 12***true***false
-TestMerge***TestTest***123.0***TestTestTestTestTestTest***true***false
+TestCourse1***TestName1***300.0***Test requirement1***true***true
+TestCourse2***TestName2***300.0***Test requirement2***true***false
+TestCourse3***TestName3***300.0***Test requirement3***false***false
+TestCourse4***TestName4***300.0***Test requirement4***false***false
+TestCourse5***TestName5***300.0***Test requirement5***false***false
+HCI-DE***Helen Purchase***500.0***conference papers***true***false
+Programming***Simon Rogers***100.0***2 tutor***true***false
+Algorithm***Alice Miller***300.0***Textbook, 2 tutors***false***false
+TestCourse6***TestName6***300.0***Test requirement6***false***false
+TestCourse7***TestName7***300.0***Test requirement7***true***true
+TestCourse8***TestName8***300.0***Test requirement8***true***true
+Sleep and eat***Chentao Zhou***1000.0***Lots of food***true***false
+Cooking***Chentao Zhou***500.0***Kitchen ware***false***false
+I don't know***Somebody***0.0***Make up the number***false***false
+TestAgain***Me***0.0***This is completed***false***false
+OneMoreTest***Yirong Li***10.0***I am sleepy***false***false
+LastTest***YirongLi***0.0***Fill the space***false***false
+Real Last Test***Yirong Li***0.0***We need to test more***true***false

@@ -47,7 +47,7 @@ public class LoginFrame extends JFrame{
 		this.position = position;
 		this.controller = new LoginController(this);
 		setTitle("Login");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(500,300);
 		setLocationRelativeTo(null);
 		GridBagLayout gridBagLayout = new GridBagLayout();
