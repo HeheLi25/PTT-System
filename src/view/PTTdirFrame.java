@@ -58,25 +58,7 @@ public class PTTdirFrame {
 	private JButton btnHome;
 	private JPanel reqPanel;
 	JScrollPane scrollPanel;
-	/**
-	 * Launch the application.
-	 */
-	//Use model data and controller control to create GUI.
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PTTdirModel model = new PTTdirModel();
-					PTTdirController controller = new PTTdirController(model);
-					PTTdirFrame window = new PTTdirFrame(model);
-					controller.setView(window);
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 	public JPanel getReqPanel() {
 		return reqPanel;
 	}

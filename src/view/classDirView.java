@@ -31,21 +31,6 @@ public class classDirView extends JFrame {
 	}
 	
 	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					classDirModel model = new classDirModel();
-					classDirController controller = new classDirController(model);
-					classDirView view = new classDirView(controller, model);
-					controller.setView(view);
-				}catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			});
-				
-	}
 	
 	public classDirView(classDirController controller, classDirModel model) {
 		controllerObject = controller;

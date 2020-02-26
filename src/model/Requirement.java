@@ -1,10 +1,8 @@
 package model;
 
-<<<<<<< HEAD
+
 import java.awt.Component;
-=======
-import java.io.File;
->>>>>>> refs/remotes/origin/SijieShen
+
 
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
@@ -42,21 +40,13 @@ public class Requirement {
 	public String toString() {
 		return courseName+"***"+classDir+"***"+budget+"***"+requirement+"***"+approved+"***"+arranged;
 	}
-<<<<<<< HEAD
+
 	public String printInfo() {
 		String Info = String.format("%20s%20.5s%20s%20s",courseName,classDir,budget,approved);
 		String Info2 = Info + requirement;
 		return Info2;
 	}
-=======
-	
-	public String printInfo() {
-		String Info = String.format("%20s%20.5s%20s",courseName,classDir,budget);
-		String Info2 = Info + requirement;
-		return Info2;
-	}
-	
->>>>>>> refs/remotes/origin/SijieShen
+
 	//Getters and Setters
 	
 	public String getCourseName() {

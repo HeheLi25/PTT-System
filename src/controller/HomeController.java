@@ -18,6 +18,14 @@ public class HomeController implements ActionListener {
 			LoginFrame lf = new LoginFrame(view,"administrator");
 			lf.setVisible(true);
 		}	
+		if(e.getSource() == view.getClassDirButton()) {
+			LoginFrame lf = new LoginFrame(view,"class director");
+			lf.setVisible(true);
+		}	
+		if(e.getSource() == view.getPTTDirButton()) {
+			LoginFrame lf = new LoginFrame(view,"PTT director");
+			lf.setVisible(true);
+		}	
 	}
 
 }
