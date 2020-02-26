@@ -56,6 +56,8 @@ public class PTTdirFrame {
 	private PTTdirModel modelObject;
 	private JButton btnSave;
 	private JButton btnHome;
+	private JPanel reqPanel;
+	JScrollPane scrollPanel;
 	/**
 	 * Launch the application.
 	 */
@@ -66,7 +68,7 @@ public class PTTdirFrame {
 				try {
 					PTTdirModel model = new PTTdirModel();
 					PTTdirController controller = new PTTdirController(model);
-					PTTdirFrame window = new PTTdirFrame(model, controller);
+					PTTdirFrame window = new PTTdirFrame(model);
 					controller.setView(window);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -75,12 +77,17 @@ public class PTTdirFrame {
 			}
 		});
 	}
+	public JPanel getReqPanel() {
+		return reqPanel;
+	}
 
 	/**
 	 * Create the application.
 	 */
-	public PTTdirFrame(PTTdirModel model,PTTdirController controller) {
-        controllerObject = controller;
+	public PTTdirFrame(PTTdirModel model) {
+		
+        controllerObject = new PTTdirController(model);
+        controllerObject.setView(this);
         modelObject = model;
         
         setFrame(new JFrame());
@@ -111,23 +118,21 @@ public class PTTdirFrame {
 		lblNewLabel.setBounds(48, 24, 285, 29);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(52, 89, 690, 310);
-		frame.getContentPane().add(scrollPane);
+		scrollPanel = new JScrollPane();
+		scrollPanel.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPanel.setBounds(52, 89, 690, 310);
+		frame.getContentPane().add(scrollPanel);
 		
 		JPanel panel = new JPanel();
-		scrollPane.setViewportView(panel);
+		scrollPanel.setViewportView(panel);
 		panel.setLayout(new GridLayout(modelObject.getReqList().size()+1, 1, 0, 0));
-		
-		//JLabel lblNewLabel_2 = new JLabel("Approved   courseName   classDir   budget   requirement   approved   arranged");
-		//lblNewLabel_2.setBounds(48, 65, 649, 16);
-		//frame.getContentPane().add(lblNewLabel_2);
 		String a =String.format("%30s%20s%18s%25s","CourseName","ClassDir","Budget","Requirement");
 		
 		JLabel firstLabel = new JLabel(a);
 		panel.add(firstLabel);
+		reqPanel = panel;
 		
+		controllerObject.setReq();
 		btnHome = new JButton("Home");
 		btnHome.setBounds(362, 424, 150, 29);
 		btnHome.addActionListener(controllerObject);
@@ -135,33 +140,21 @@ public class PTTdirFrame {
 		
 		
 	
-	
-		for(int i =0;i<modelObject.getReqList().size();i++) {
-		
-			
-			modelObject.getReqList().get(i).setCheckPanel(new JPanel());
-			panel.add(modelObject.getReqList().get(i).getCheckPanel());
-			modelObject.getReqList().get(i).getCheckPanel().setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
-			
-			JLabel infoLabel = new JLabel();
-			
-			modelObject.getReqList().get(i).setCheckBox(new JCheckBox());
-			modelObject.getReqList().get(i).getCheckBox().addItemListener(controllerObject);
-			modelObject.getReqList().get(i).getCheckPanel().add(modelObject.getReqList().get(i).getCheckBox());
-			
-			infoLabel.setText(modelObject.getReqList().get(i).printInfo());
-			infoLabel.setHorizontalAlignment(SwingConstants.LEFT);
-			modelObject.getReqList().get(i).getCheckPanel().add(infoLabel);
-		}
+
+
 
 		}
 	public void reinitialize(){
-		PTTdirModel model = new PTTdirModel();
-		PTTdirController controller = new PTTdirController(model);
-		PTTdirFrame window = new PTTdirFrame(model, controller);
-		controller.setView(window);
-		window.frame.setVisible(true);
-		initialize();
+		reqPanel.removeAll();
+		JPanel panel = new JPanel();
+		scrollPanel.setViewportView(panel);
+		panel.setLayout(new GridLayout(modelObject.getReqList().size()+1, 1, 0, 0));
+		String a =String.format("%30s%20s%18s%25s","CourseName","ClassDir","Budget","Requirement");
+		
+		JLabel firstLabel = new JLabel(a);
+		panel.add(firstLabel);
+		reqPanel = panel;
+		controllerObject.setReq();
 	}
 	
 	

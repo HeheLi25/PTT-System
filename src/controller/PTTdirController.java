@@ -4,11 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.ArrayList;
 
+import javax.swing.JCheckBox;
+
+import model.FileTool;
 import model.PTTdirModel;
+import model.Requirement;
 import view.PTTdirFrame;
 
-public class PTTdirController implements ActionListener,ItemListener{
+public class PTTdirController implements ActionListener{
 	private PTTdirFrame viewObject;
 	private PTTdirModel modelObject;
 	
@@ -31,23 +36,30 @@ public class PTTdirController implements ActionListener,ItemListener{
 		}else {
 			System.exit(0);
 			}
-			
-
 	}
-
-	@Override
-	public void itemStateChanged(ItemEvent e) {
-		// TODO Auto-generated method stub
-		for(int i =0;i<modelObject.getReqList().size();i++) {
-			if(modelObject.getReqList().get(i).getCheckBox().isSelected()) {
-				modelObject.getReqList().get(i).setApproved(true);
-				
-			}else {
-				modelObject.getReqList().get(i).setApproved(false);
+	public void setReq() {
+		ArrayList<Requirement> allReq =  modelObject.getReqList();
+		for(Requirement r : allReq) {
 			
-			}
+			JCheckBox cb = new JCheckBox(r.printInfo());
+			if(r.isApproved()) cb.setEnabled(false);
+			cb.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JCheckBox checkBox = (JCheckBox) e.getSource();
+					if (checkBox.isSelected()) {
+						r.setApproved(true);
+					} else {
+						r.setApproved(false);
+					}
+					modelObject.setReqList(allReq);
+				}
+			});
 			
+			viewObject.getReqPanel().add(cb);
 		}
+		
 	}
+
+
 }
 
