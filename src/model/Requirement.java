@@ -1,5 +1,10 @@
 package model;
 
+import java.io.File;
+
+import javax.swing.JCheckBox;
+import javax.swing.JPanel;
+
 public class Requirement {
 	private String courseName;
 	private String classDir;
@@ -7,6 +12,8 @@ public class Requirement {
 	private String requirement;
 	private boolean approved;
 	private boolean arranged;
+	private JCheckBox checkBox ;
+	private JPanel checkPanel; 
 	
 	//Constructor
 	public Requirement(String courseName,String classDir,double budget,String requirement) {
@@ -28,7 +35,13 @@ public class Requirement {
 	
 	
 	public String toString() {
-		return courseName+"***"+classDir+"***"+budget+"***"+requirement+"***"+approved+"***"+arranged;
+		return courseName+"***"+classDir+"***"+budget+"***"+requirement;
+	}
+	
+	public String printInfo() {
+		String Info = String.format("%20s%20.5s%20s",courseName,classDir,budget);
+		String Info2 = Info + requirement;
+		return Info2;
 	}
 	
 	//Getters and Setters
@@ -69,6 +82,7 @@ public class Requirement {
 	public void setArranged(boolean arranged) {
 		this.arranged = arranged;
 	}
+
 	
 
 }
