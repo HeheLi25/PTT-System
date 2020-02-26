@@ -12,8 +12,7 @@ public class Requirement {
 	private String requirement;
 	private boolean approved;
 	private boolean arranged;
-	private JCheckBox checkBox ;
-	private JPanel checkPanel; 
+
 	//Constructor
 	public Requirement(String courseName,String classDir,double budget,String requirement) {
 		this.courseName = courseName;
@@ -79,18 +78,6 @@ public class Requirement {
 	}
 	public void setArranged(boolean arranged) {
 		this.arranged = arranged;
-	}
-	public JCheckBox getCheckBox() {
-		return checkBox;
-	}
-	public void setCheckBox(JCheckBox checkBox) {
-		this.checkBox = checkBox;
-	}
-	public JPanel getCheckPanel() {
-		return checkPanel;
-	}
-	public void setCheckPanel(JPanel checkPanel) {
-		this.checkPanel = checkPanel;
 	}
 	
 
