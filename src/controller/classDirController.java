@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import javax.swing.JTextField;
 import model.FileTool;
 import model.Requirement;
 import model.classDirModel;
+import view.HomeFrame;
 import view.classDirView;
 import view.classDirView2;
 
@@ -55,7 +57,9 @@ public class classDirController  implements ActionListener {
 			JOptionPane.showMessageDialog(null,"Success.");
 			viewObject.clearText();
 		}else if(e.getSource() == viewObject.getBtnReturn()) {
-			System.exit(0);
+			viewObject.dispose();
+			HomeFrame hf = new HomeFrame();
+			hf.setVisible(true);
 			
 		}else if(e.getSource() == viewObject.getBtnView()) {
 			viewObject.dispose();
@@ -70,6 +74,7 @@ public class classDirController  implements ActionListener {
 				JLabel budget = new JLabel(r.getBudget()+"");
 				JLabel requirement = new JLabel(r.getRequirement());
 				JLabel approve = new JLabel(String.format("%20s", r.isApproved()+""));
+				if(r.isApproved()) approve.setForeground(new Color(0, 150, 0));
 				viewObject2.getContent().add(course);
 				viewObject2.getContent().add(director);
 				viewObject2.getContent().add(budget);

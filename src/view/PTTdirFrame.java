@@ -62,6 +62,30 @@ public class PTTdirFrame {
 	public JPanel getReqPanel() {
 		return reqPanel;
 	}
+	
+	
+//	/**
+//	 * Launch the application.
+//	 */
+//	//Use model data and controller control to create GUI.
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					PTTdirModel model = new PTTdirModel();
+//					PTTdirController controller = new PTTdirController(model);
+//					PTTdirFrame window = new PTTdirFrame(model);
+//					controller.setView(window);
+//					window.frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+//	
+	
+	
 
 	/**
 	 * Create the application.
@@ -80,6 +104,7 @@ public class PTTdirFrame {
 		initialize();
 		
 	}
+	
 
 	/**
 	 * Initialize the contents of the frame.
@@ -88,7 +113,7 @@ public class PTTdirFrame {
 		
 		
 		
-		btnSave = new JButton("Save");
+		btnSave = new JButton("Approve");
 		btnSave.addActionListener(controllerObject);
 		btnSave.setBounds(550, 424, 150, 29);
 		frame.getContentPane().add(btnSave);
@@ -96,8 +121,8 @@ public class PTTdirFrame {
 		
 				
 		JLabel lblNewLabel = new JLabel("Approve Requipments ");
-		lblNewLabel.setFont(new Font("Lucida Grande", Font.BOLD, 19));
-		lblNewLabel.setBounds(48, 24, 285, 29);
+		lblNewLabel.setFont(new Font("Corbel", Font.BOLD, 25));
+		lblNewLabel.setBounds(21, 10, 285, 47);
 		frame.getContentPane().add(lblNewLabel);
 		
 		scrollPanel = new JScrollPane();
@@ -107,18 +132,47 @@ public class PTTdirFrame {
 		
 		JPanel panel = new JPanel();
 		scrollPanel.setViewportView(panel);
-		panel.setLayout(new GridLayout(modelObject.getReqList().size()+1, 1, 0, 0));
-		String a =String.format("%30s%20s%18s%25s","CourseName","ClassDir","Budget","Requirement");
+		panel.setLayout(new GridLayout(0,5));
 		
-		JLabel firstLabel = new JLabel(a);
-		panel.add(firstLabel);
+		
+
 		reqPanel = panel;
 		
 		controllerObject.setReq();
-		btnHome = new JButton("Home");
+		btnHome = new JButton("Logout");
 		btnHome.setBounds(362, 424, 150, 29);
 		btnHome.addActionListener(controllerObject);
 		frame.getContentPane().add(btnHome);
+		
+		JLabel lblNewLabel_1 = new JLabel("Course");
+		lblNewLabel_1.setForeground(new Color(0, 102, 102));
+		lblNewLabel_1.setFont(new Font("Corbel Light", Font.BOLD, 22));
+		lblNewLabel_1.setBounds(58, 58, 83, 29);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Class Director");
+		lblNewLabel_1_1.setForeground(new Color(51, 102, 153));
+		lblNewLabel_1_1.setFont(new Font("Corbel Light", Font.BOLD, 22));
+		lblNewLabel_1_1.setBounds(151, 58, 141, 29);
+		frame.getContentPane().add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("budget");
+		lblNewLabel_1_1_1.setForeground(new Color(102, 102, 153));
+		lblNewLabel_1_1_1.setFont(new Font("Corbel Light", Font.BOLD, 22));
+		lblNewLabel_1_1_1.setBounds(329, 58, 74, 29);
+		frame.getContentPane().add(lblNewLabel_1_1_1);
+		
+		JLabel lblNewLabel_1_1_1_1 = new JLabel("Requirement");
+		lblNewLabel_1_1_1_1.setForeground(new Color(153, 102, 153));
+		lblNewLabel_1_1_1_1.setFont(new Font("Corbel Light", Font.BOLD, 22));
+		lblNewLabel_1_1_1_1.setBounds(438, 58, 141, 29);
+		frame.getContentPane().add(lblNewLabel_1_1_1_1);
+		
+		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Approved");
+		lblNewLabel_1_1_1_1_1.setForeground(new Color(204, 102, 102));
+		lblNewLabel_1_1_1_1_1.setFont(new Font("Corbel Light", Font.BOLD, 22));
+		lblNewLabel_1_1_1_1_1.setBounds(609, 58, 105, 29);
+		frame.getContentPane().add(lblNewLabel_1_1_1_1_1);
 		
 		
 	
@@ -129,12 +183,8 @@ public class PTTdirFrame {
 	public void reinitialize(){
 		reqPanel.removeAll();
 		JPanel panel = new JPanel();
+		panel.setLayout(new GridLayout(0,5));
 		scrollPanel.setViewportView(panel);
-		panel.setLayout(new GridLayout(modelObject.getReqList().size()+1, 1, 0, 0));
-		String a =String.format("%30s%20s%18s%25s","CourseName","ClassDir","Budget","Requirement");
-		
-		JLabel firstLabel = new JLabel(a);
-		panel.add(firstLabel);
 		reqPanel = panel;
 		controllerObject.setReq();
 	}
