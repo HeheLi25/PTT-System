@@ -4,8 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
+import model.FileTool;
 import model.Requirement;
 import model.classDirModel;
 import view.classDirView;
@@ -29,27 +33,53 @@ public class classDirController  implements ActionListener {
 		viewObject = view;
 		viewObject.setVisible(true);
 	}
+	public void setView2(classDirView2 view) {
+		viewObject2 = view;
+	}
 	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == viewObject.getBtnSave()) {
 			try {
-				modelObject.save("Requirement.txt", viewObject.reqArray);
+				String[] s = new String[4];
+				ArrayList<JTextField> result = viewObject.getReqArray();
+				int count = 0;
+				for(JTextField tf: result) {
+					s[count++] = tf.getText();
+				}
+				Requirement r = new Requirement(s[0],s[1],Double.parseDouble(s[2]),s[3]);
+				FileTool.writeOneReq(r);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			viewObject.reLayoutComponents();
+			JOptionPane.showMessageDialog(null,"Success.");
+			viewObject.clearText();
 		}else if(e.getSource() == viewObject.getBtnReturn()) {
 			System.exit(0);
+			
 		}else if(e.getSource() == viewObject.getBtnView()) {
-			classDirView2 v = new classDirView2();
+			viewObject.dispose();
+			classDirView2 v = new classDirView2(this);
+			viewObject2 = v;
 			v.setVisible(true);
-			String s = modelObject.getReqList().toString();
-			v.textField.setText(s);
-			//modelObject.getReqList();
+			modelObject.setReqList();
+			ArrayList<Requirement> list = modelObject.getReqList();
+			for(Requirement r: list) {
+				JLabel course = new JLabel(r.getCourseName());
+				JLabel director = new JLabel(r.getClassDir());
+				JLabel budget = new JLabel(r.getBudget()+"");
+				JLabel requirement = new JLabel(r.getRequirement());
+				JLabel approve = new JLabel(String.format("%20s", r.isApproved()+""));
+				viewObject2.getContent().add(course);
+				viewObject2.getContent().add(director);
+				viewObject2.getContent().add(budget);
+				viewObject2.getContent().add(requirement);
+				viewObject2.getContent().add(approve);
+			}
 		}else if(e.getSource() == viewObject2.getNewBtnReturn()) {
-			classDirView v2 = new classDirView(this, modelObject);
-			v2.setVisible(true);
+			viewObject2.dispose();
+			viewObject = new classDirView(this, modelObject);
+			viewObject.setVisible(true);
 			
 		}else {
 			System.exit(0);

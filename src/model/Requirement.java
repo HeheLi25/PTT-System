@@ -35,7 +35,7 @@ public class Requirement {
 	
 	
 	public String toString() {
-		return courseName+"***"+classDir+"***"+budget+"***"+requirement;
+		return courseName+"***"+classDir+"***"+budget+"***"+requirement+"***"+approved+"***"+arranged;
 	}
 	
 	public String printInfo() {

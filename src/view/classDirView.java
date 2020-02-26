@@ -24,8 +24,11 @@ public class classDirView extends JFrame {
 	public JTextField textField_1;
 	public JTextField textField_2;
 	public JTextField textField_3;
-	public ArrayList<JTextField> reqArray = new ArrayList<JTextField>();
+	private ArrayList<JTextField> reqArray = new ArrayList<JTextField>();
 	
+	public ArrayList<JTextField> getReqArray(){
+		return reqArray;
+	}
 	
 	
 	public static void main(String[] args) {
@@ -117,7 +120,7 @@ public class classDirView extends JFrame {
 		btnView.addActionListener(controllerObject);
 		getContentPane().add(btnView);
 		
-		
+		System.out.println(reqArray);
 	
 	}
 	
@@ -127,6 +130,12 @@ public class classDirView extends JFrame {
 		classDirView view = new classDirView(controller, model);
 		controller.setView(view);
 		layoutComponents();
+	}
+	public void clearText() {
+		textField.setText("");
+		textField_1.setText("");
+		textField_2.setText("");
+		textField_3.setText("");
 	}
 	
 	public JButton getBtnView() {
