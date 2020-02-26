@@ -8,8 +8,12 @@ import javax.swing.JOptionPane;
 
 import model.AccountCheck;
 import model.FileTool;
+import model.PTTdirModel;
+import model.classDirModel;
 import view.AdminFrame;
 import view.LoginFrame;
+import view.PTTdirFrame;
+import view.classDirView;
 
 public class LoginController implements ActionListener{
 	LoginFrame view;
@@ -26,8 +30,21 @@ public class LoginController implements ActionListener{
 			if(match) {
 				view.closeHomeFrame();
 				view.dispose();
-				AdminFrame af = new AdminFrame();
-				af.setVisible(true);
+				if(position == "administrator") {
+					AdminFrame af = new AdminFrame();
+					af.setVisible(true);
+				}else if(position == "class director") {
+					classDirModel model = new classDirModel();
+					classDirController controller = new classDirController(model);
+					classDirView view = new classDirView(controller, model);
+					controller.setView(view);
+				}else if(position == "PTT director") {
+					PTTdirModel model = new PTTdirModel();
+					PTTdirController controller = new PTTdirController(model);
+					PTTdirFrame window = new PTTdirFrame(model);
+					controller.setView(window);
+					window.getFrame().setVisible(true);
+				}
 			}else {
 				view.reset();
 				JOptionPane.showMessageDialog(null, "Wrong username or password.", "Alert", JOptionPane.ERROR_MESSAGE);
