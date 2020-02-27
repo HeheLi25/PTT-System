@@ -23,10 +23,10 @@ import java.awt.Color;
 public class classDirView2 extends JFrame {
 	//public JFrame frame;
 	private classDirController controllerObject;
-	public classDirModel modelObject;
+	private classDirModel modelObject;
 	private JPanel content;
-	public JButton newBtnReturn;
-	public JScrollPane sp;
+	private JButton newBtnReturn;
+	private JScrollPane sp;
 	
 	public JPanel getContent() {
 		return content;

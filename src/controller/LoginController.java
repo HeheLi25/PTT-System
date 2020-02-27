@@ -16,7 +16,8 @@ import view.PTTdirFrame;
 import view.classDirView;
 
 public class LoginController implements ActionListener{
-	LoginFrame view;
+	private LoginFrame view;
+	
 	public LoginController(LoginFrame view) {
 		this.view = view;
 	}

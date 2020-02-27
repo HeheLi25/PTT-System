@@ -20,12 +20,12 @@ import view.AdminFrame;
 import view.ArrangeFrame;
 
 public class ArrangeController implements ActionListener{
-	public ArrangeFrame view;
-	public JLabel requireLabel;
-	ArrayList<Requirement> allReq;
-	Requirement req;
-	public JPanel staffPanel, trainingPanel;
-	public JScrollPane staffsp, trainingsp;
+	private ArrangeFrame view;
+	private JLabel requireLabel;
+	private ArrayList<Requirement> allReq;
+	private Requirement req;
+	private JPanel staffPanel, trainingPanel;
+	private JScrollPane staffsp, trainingsp;
 	private ArrayList<String> staffs;
 	private ArrayList<String> training;
 	

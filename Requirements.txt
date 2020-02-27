@@ -16,3 +16,4 @@ TestAgain***Me***0.0***This is completed***false***false
 OneMoreTest***Yirong Li***10.0***I am sleepy***false***false
 LastTest***YirongLi***0.0***Fill the space***false***false
 Real Last Test***Yirong Li***0.0***We need to test more***true***false
+TestCourseName***TestName***300.0***Test Requirements***true***true

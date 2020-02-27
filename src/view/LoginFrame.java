@@ -21,6 +21,7 @@ public class LoginFrame extends JFrame{
 	private JButton login;
 	private String position;
 	private HomeFrame homeFrame;
+	
 	public JTextField getUsername() {
 		return username;
 	}
