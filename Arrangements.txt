@@ -10,3 +10,7 @@ TestCourse8***TestName8***300.0***Test requirement8***true***false
 Yirong***Chentao***
 Eat***Sleep***Play***
 
+TestCourseName***TestName***300.0***Test Requirements***true***false
+Fanyu***Simon***Salmon***
+Algorithm and Data Structure***Database base***
+

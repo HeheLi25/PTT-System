@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import javax.swing.JTextField;
 
 public class classDirModel {
-	public ArrayList<Requirement> reqList;
-	public Requirement req;
+	private ArrayList<Requirement> reqList;
+	private Requirement req;
 	
 	public ArrayList<Requirement> getReqList() {
 		return reqList;

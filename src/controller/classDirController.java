@@ -21,9 +21,9 @@ public class classDirController  implements ActionListener {
 	private classDirView viewObject;
 	private classDirModel modelObject;
 	private classDirView2 viewObject2;
-	public JScrollPane sp;
-	ArrayList<Requirement> allReq;
-	Requirement req;
+	private JScrollPane sp;
+	private ArrayList<Requirement> allReq;
+	private Requirement req;
 
 	
 	public classDirController(classDirModel model) {
@@ -46,9 +46,21 @@ public class classDirController  implements ActionListener {
 				ArrayList<JTextField> result = viewObject.getReqArray();
 				int count = 0;
 				for(JTextField tf: result) {
-					s[count++] = tf.getText();
+					s[count] = tf.getText();
+					if(s[count].length()<1) {
+						JOptionPane.showMessageDialog(null, "Please fill all the blanks. ", "Alert", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+					count++;
 				}
-				Requirement r = new Requirement(s[0],s[1],Double.parseDouble(s[2]),s[3]);
+				Double budget = 0.0;
+				try {
+					budget = Double.parseDouble(s[2]);
+				}catch(Exception exc) {
+					JOptionPane.showMessageDialog(null, "Please input a valid number for budget. ", "Alert", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				Requirement r = new Requirement(s[0],s[1],budget,s[3]);
 				FileTool.writeOneReq(r);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block

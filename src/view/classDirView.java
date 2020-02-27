@@ -20,11 +20,11 @@ import java.awt.Color;
 public class classDirView extends JFrame {
 	private classDirController controllerObject;
 	private classDirModel modelObject;
-	public JButton btnReturn, btnSave, btnView;
-	public JTextField textField;
-	public JTextField textField_1;
-	public JTextField textField_2;
-	public JTextField textField_3;
+	private JButton btnReturn, btnSave, btnView;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
 	private ArrayList<JTextField> reqArray = new ArrayList<JTextField>();
 	
 	public ArrayList<JTextField> getReqArray(){

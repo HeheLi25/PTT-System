@@ -17,9 +17,9 @@ import view.AdminFrame;
 import view.ArrangedRFrame;
 
 public class ArrangedRController implements ActionListener{
-	public ArrangedRFrame view;
-	JPanel panel;
-	JScrollPane sp;
+	private ArrangedRFrame view;
+	private JPanel panel;
+	private JScrollPane sp;
 	
 	public ArrangedRController(ArrangedRFrame view) {
 		this.view = view;

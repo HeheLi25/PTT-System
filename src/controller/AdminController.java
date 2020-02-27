@@ -18,9 +18,9 @@ import view.ArrangedRFrame;
 import view.HomeFrame;
 
 public class AdminController implements ActionListener{
-	public AdminFrame view;
-	public JPanel panel;
-	public JScrollPane sp;
+	private AdminFrame view;
+	private JPanel panel;
+	private JScrollPane sp;
 
 	public AdminController(AdminFrame view) {
 		this.view = view;
