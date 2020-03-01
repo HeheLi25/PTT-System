@@ -14,3 +14,7 @@ TestCourseName***TestName***300.0***Test Requirements***true***false
 Fanyu***Simon***Salmon***
 Algorithm and Data Structure***Database base***
 
+Sleep and eat***Chentao Zhou***1000.0***Lots of food***true***false
+Yirong***Chentao***
+Eat***Sleep***
+

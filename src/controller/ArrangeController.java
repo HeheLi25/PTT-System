@@ -79,7 +79,7 @@ public class ArrangeController implements ActionListener{
 		staffsp = new JScrollPane(staffPanel);
 		staffsp.setBounds(38, 110, 243, 273);
 		
-		ArrayList<String> allStaffs = FileTool.readFile("staffs");
+		ArrayList<String> allStaffs = FileTool.readFile("staffs.txt");
 		
 		for (String staff : allStaffs) {
 			JCheckBox name = new JCheckBox(staff);
@@ -105,7 +105,7 @@ public class ArrangeController implements ActionListener{
 		trainingsp = new JScrollPane(trainingPanel);
 		trainingsp.setBounds(398, 114, 368, 273);
 		
-		ArrayList<String> trainings = FileTool.readFile("training");
+		ArrayList<String> trainings = FileTool.readFile("training.txt");
 		
 		for(String t: trainings) {
 			JCheckBox courseName = new JCheckBox(t);
