@@ -5,11 +5,11 @@ TestCourse4***TestName4***300.0***Test requirement4***false***false
 TestCourse5***TestName5***300.0***Test requirement5***false***false
 HCI-DE***Helen Purchase***500.0***conference papers***true***false
 Programming***Simon Rogers***100.0***2 tutor***true***false
-Algorithm***Alice Miller***300.0***Textbook, 2 tutors***false***false
+Algorithm***Alice Miller***300.0***Textbook, 2 tutors***true***false
 TestCourse6***TestName6***300.0***Test requirement6***false***false
 TestCourse7***TestName7***300.0***Test requirement7***true***true
 TestCourse8***TestName8***300.0***Test requirement8***true***true
-Sleep and eat***Chentao Zhou***1000.0***Lots of food***true***false
+Sleep and eat***Chentao Zhou***1000.0***Lots of food***true***true
 Cooking***Chentao Zhou***500.0***Kitchen ware***false***false
 I don't know***Somebody***0.0***Make up the number***false***false
 TestAgain***Me***0.0***This is completed***false***false
