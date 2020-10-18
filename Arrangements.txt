@@ -14,3 +14,7 @@ TestCourseName***TestName***300.0***Test Requirements***true***false
 Fanyu***Simon***Salmon***
 Algorithm and Data Structure***Database base***
 
+TestCourse2***TestName2***300.0***Test requirement2***true***false
+Simon***Salmon***
+Advanced Programming***
+

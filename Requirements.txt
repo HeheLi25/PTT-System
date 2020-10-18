@@ -1,5 +1,5 @@
 TestCourse1***TestName1***300.0***Test requirement1***true***true
-TestCourse2***TestName2***300.0***Test requirement2***true***false
+TestCourse2***TestName2***300.0***Test requirement2***true***true
 TestCourse3***TestName3***300.0***Test requirement3***false***false
 TestCourse4***TestName4***300.0***Test requirement4***false***false
 TestCourse5***TestName5***300.0***Test requirement5***false***false
